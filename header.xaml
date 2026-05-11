@@ -11,20 +11,24 @@
         <materialDesign:ColorZone Padding="16" Mode="Standard" Background="{StaticResource Accsent_Color}" Foreground="{StaticResource Base_Color}" MouseLeftButtonDown="header">
 
             <DockPanel Cursor="">
-                <!--ハンバーガーメニューを作ってる部分-->
+                <!--ハンバーガーメニューを作ってる部分　一旦必要ないので保留中--><!--
                 <materialDesign:PopupBox
              DockPanel.Dock="Right"
              PlacementMode="BottomAndAlignRightEdges">
-                    <!--右側にピタッとくっつける-->
+                    --><!--右側にピタッとくっつける--><!--
                     <ListBox>
                         <ListBoxItem Content="Hello World" />
                         <ListBoxItem Content="Nice Popup" />
                         <ListBoxItem Content="アプリ終了" Selected="Exit_Button"/>
-                        <!--アプリの終了ボタン-->
+                        --><!--アプリの終了ボタン--><!--
                     </ListBox>
 
 
-                </materialDesign:PopupBox>
+                </materialDesign:PopupBox>-->
+
+                <Button DockPanel.Dock="Right" Click="Exit_Button" Foreground="{StaticResource Base_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Kind="WindowClose" />
+                </Button>
 
                 <Button DockPanel.Dock="Right" Click="Maxsize" Foreground="{StaticResource Base_Color}" Style="{StaticResource MaterialDesignToolButton}">
                     <materialDesign:PackIcon Kind="WindowMaximize" />
