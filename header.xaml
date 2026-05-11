@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="UI_application_UX.UserControl1 "
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:UI_application_UX" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            mc:Ignorable="d"
+            Background="{StaticResource Base_Color}">
+
+    <Grid>
+        <materialDesign:ColorZone Padding="16" Mode="Standard" Background="{StaticResource Accsent_Color}" Foreground="{StaticResource Base_Color}" MouseLeftButtonDown="header">
+
+            <DockPanel Cursor="">
+                <!--ハンバーガーメニューを作ってる部分-->
+                <materialDesign:PopupBox
+             DockPanel.Dock="Right"
+             PlacementMode="BottomAndAlignRightEdges">
+                    <!--右側にピタッとくっつける-->
+                    <ListBox>
+                        <ListBoxItem Content="Hello World" />
+                        <ListBoxItem Content="Nice Popup" />
+                        <ListBoxItem Content="アプリ終了" Selected="Exit_Button"/>
+                        <!--アプリの終了ボタン-->
+                    </ListBox>
+
+
+                </materialDesign:PopupBox>
+
+                <Button DockPanel.Dock="Right" Click="Maxsize" Foreground="{StaticResource Base_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Kind="WindowMaximize" />
+                </Button>
+                <!--最大化ボタン-->
+
+
+
+                <Button DockPanel.Dock="Right" Click="Minisize" Foreground="{StaticResource Base_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Kind="WindowMinimize" />
+                </Button>
+                <!--最小化ボタン-->
+
+
+                <StackPanel Orientation="Horizontal" Cursor="">
+
+                    <Button Cursor="Hand" Style="{StaticResource MaterialDesignToolButton}">
+                        <Image Source="Images/japan.jpg" Width="32" Height="32" />
+                    </Button>
+                    <!--日本の国旗のアイコン-->
+
+
+
+
+
+                    <TextBlock DockPanel.Dock="Left" Margin="16,0,0,0" VerticalAlignment="Center" Text="日本の文化" />
+                    <!--タイトルのテキスト-->
+
+
+                </StackPanel>
+
+            </DockPanel>
+
+        </materialDesign:ColorZone>
+
+    </Grid>
+</UserControl>
