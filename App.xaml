@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <SolidColorBrush x:Key="Accsent_Color" Color="#d51b2c" />
+            <SolidColorBrush x:Key="Main_Color" Color="#FFFFFF" />
             <SolidColorBrush x:Key="Base_Color" Color="#e6e2da" />
             <SolidColorBrush x:Key="Sub_Color" Color="#b19e8a" />
         </ResourceDictionary>

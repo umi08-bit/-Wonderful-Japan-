@@ -7,14 +7,21 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
-        Background="{StaticResource Base_Color}"
+        Background="{StaticResource Main_Color}"
         Title="MainWindow" Height="450" Width="800">
 
 
     <DockPanel>
         <local:UserControl1 DockPanel.Dock="Top" />
         <Grid>
+            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Margin="0,20,0,0">
+                <WrapPanel Margin="50">
+                    <local:card Margin="10"/>
+                    <local:card Margin="10"/>
+                    <local:card Margin="10"/>
+                </WrapPanel>
+          </ScrollViewer>
 
-    </Grid>
+        </Grid>
     </DockPanel>
 </Window>

@@ -26,24 +26,26 @@
 
                 </materialDesign:PopupBox>-->
 
-                <Button DockPanel.Dock="Right" Click="Exit_Button" Foreground="{StaticResource Base_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                <Button DockPanel.Dock="Right" Click="Exit_Button" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
                     <materialDesign:PackIcon Kind="WindowClose" />
                 </Button>
 
-                <Button DockPanel.Dock="Right" Click="Maxsize" Foreground="{StaticResource Base_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                <Button DockPanel.Dock="Right" Click="Maxsize" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
                     <materialDesign:PackIcon Kind="WindowMaximize" />
                 </Button>
                 <!--最大化ボタン-->
 
 
 
-                <Button DockPanel.Dock="Right" Click="Minisize" Foreground="{StaticResource Base_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                <Button DockPanel.Dock="Right" Click="Minisize" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
                     <materialDesign:PackIcon Kind="WindowMinimize" />
                 </Button>
                 <!--最小化ボタン-->
 
 
                 <StackPanel Orientation="Horizontal" Cursor="">
+                    
+                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
 
                     <Button Cursor="Hand" Style="{StaticResource MaterialDesignToolButton}">
                         <Image Source="Images/japan.jpg" Width="32" Height="32" />
