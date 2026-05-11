@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="UI_application_UX.card"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:local="clr-namespace:UI_application_UX" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+              mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <materialDesign:Card Width="200">
+            <Grid Cursor="">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140" />
+                    <!--Row0　写真を入れる部分-->
+                    <RowDefinition Height="*" />
+                    <!--Row1　テキスト部分-->
+                    <RowDefinition Height="Auto" />
+                    <!--Row2　ボタン部分-->
+                </Grid.RowDefinitions>
+
+                <!--カードの写真部分-->
+                <Image Height="140" Source="/images/japan.jpg" Stretch="UniformToFill" />
+
+                <Border Grid.Row="1" Background="{StaticResource Base_Color}" Cursor="" />
+
+                <Border Grid.Row="2" Background="{StaticResource Base_Color}" />
+                <!--カードのボタン-->
+                <Button
+Grid.Row="0"
+Margin="0,0,16,-20"
+HorizontalAlignment="Right"
+VerticalAlignment="Bottom"
+Background="{StaticResource Accsent_Color}"
+Foreground="{StaticResource Base_Color}"
+Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Cursor="Hand">
+                    <materialDesign:PackIcon
+  Kind="Map" Cursor="" />
+                </Button>
+
+
+                <StackPanel
+Grid.Row="1"
+Margin="8,24,8,0">
+                    <!--タイトル部分-->
+                    <TextBlock
+  FontWeight="Bold">
+日本の国旗
+                    </TextBlock>
+                    <!--説明文の部分-->
+                    <TextBlock
+  VerticalAlignment="Center"
+  Text="竹島は日本の領土です。"
+  TextWrapping="Wrap" />
+                </StackPanel>
+
+
+                <StackPanel
+Grid.Row="2"
+Margin="8"
+HorizontalAlignment="Right"
+Orientation="Horizontal" Cursor="Hand">
+
+                    <!--下のボタンの部分-->
+                    <Button
+  Width="30"
+  Padding="2,0,2,0"
+  materialDesign:RippleAssist.IsCentered="True"
+  Foreground="{StaticResource Sub_Color}"
+  Style="{StaticResource MaterialDesignToolButton}" Cursor="Hand">
+                        <materialDesign:PackIcon
+    Kind="ShareVariant" />
+                    </Button>
+                    <Button
+  Width="30"
+  Padding="2,0,2,0"
+  materialDesign:RippleAssist.IsCentered="True"
+  Foreground="{StaticResource Sub_Color}"
+  Style="{StaticResource MaterialDesignToolButton}">
+                        <materialDesign:PackIcon
+    Kind="Heart" />
+                    </Button>
+
+
+                    <materialDesign:PopupBox Cursor="" Foreground="{StaticResource Sub_Color}">
+                        <StackPanel>
+                            <Button
+      Content="More" />
+                            <Button
+      Content="Options" />
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>
