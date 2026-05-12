@@ -12,14 +12,14 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="140" />
                     <!--Row0　写真を入れる部分-->
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="150" />
                     <!--Row1　テキスト部分-->
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="40" />
                     <!--Row2　ボタン部分-->
                 </Grid.RowDefinitions>
 
                 <!--カードの写真部分-->
-                <Image Height="140" Source="/images/japan.jpg" Stretch="UniformToFill" />
+                <Image Height="140" Source="/images/take.jpg" Stretch="UniformToFill" />
 
                 <Border Grid.Row="1" Background="{StaticResource Base_Color}" Cursor="" />
 

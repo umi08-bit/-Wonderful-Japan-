@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="images\japan.jpg" />
+    <None Remove="images\take.jpg" />
     <None Remove="images\ロゴ.png" />
   </ItemGroup>
 
@@ -19,6 +20,9 @@
 
   <ItemGroup>
     <Resource Include="images\japan.jpg" />
+    <Resource Include="images\take.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\ロゴ.png" />
   </ItemGroup>
 

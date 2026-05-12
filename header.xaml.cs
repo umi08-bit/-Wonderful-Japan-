@@ -49,5 +49,16 @@ namespace UI_application_UX
                 Window.GetWindow(this).WindowState = WindowState.Maximized; // ウィンドウを最大化
             }
         }
+
+        private void MenuToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            // MainWindow クラスのインスタンスを取得
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            
+                
+                // ToggleButton のチェック状態と連動させる
+                mainWindow.NavDrawer.IsLeftDrawerOpen = MenuToggleButton.IsChecked ?? false;
+           
+        }
     }
 }
