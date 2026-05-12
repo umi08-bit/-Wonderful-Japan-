@@ -9,19 +9,70 @@
         AllowsTransparency="True"
         Background="{StaticResource Main_Color}"
         Title="MainWindow" Height="450" Width="800">
+    <!--ウィンドウの設定-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="7" GlassFrameThickness="0" CornerRadius="10" />
+    </WindowChrome.WindowChrome>
 
 
     <DockPanel>
         <local:UserControl1 DockPanel.Dock="Top" />
-        <Grid>
-            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" Margin="0,20,0,0">
-                <WrapPanel Margin="50">
-                    <local:card Margin="10"/>
-                    <local:card Margin="10"/>
-                    <local:card Margin="10"/>
-                </WrapPanel>
-          </ScrollViewer>
 
-        </Grid>
+
+
+
+            
+            <materialDesign:DrawerHost x:Name="NavDrawer">
+                <materialDesign:DrawerHost.LeftDrawerContent>
+                    <Border Width="250" Background="{StaticResource Main_Color}">
+                        <StackPanel>
+                            <TextBlock Text="カテゴリー" FontSize="20" Margin="10" Foreground="{StaticResource Sub_Color}"/>
+                            <local:Button Margin="10"/>
+                            <local:Button Margin="10"/>
+                            <local:Button Margin="10"/>
+                        </StackPanel>
+                    </Border>
+                </materialDesign:DrawerHost.LeftDrawerContent>
+
+
+
+
+       <Grid>
+                <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <!--上のメニューbutton-->
+                <Border Grid.Row="0" Background="{StaticResource Base_Color}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    
+                    <local:Menu_Button Margin="20"/>
+                    <local:Menu_Button Margin="20"/>
+                    <local:Menu_Button Margin="20"/>
+
+                </StackPanel>
+                </Border>
+
+                <!--スクロールバーを配置して、横にも縦にも自動的に表示される-->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="0,20,0,0"
+                          materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">
+                            <!--スクロールバーに触れていないときは非表示-->
+                
+                <UniformGrid Columns="4" Margin="20" Grid.Row="1">
+                    <local:card Margin="10"/>
+                    <local:card Margin="10"/>
+                    <local:card Margin="10"/>
+                    <local:card Margin="10"/>
+                    <local:card Margin="10"/>
+                    <local:card Margin="10"/>
+                </UniformGrid>
+          </ScrollViewer>
+           
+           
+          </Grid>
+        </materialDesign:DrawerHost>
+        
     </DockPanel>
 </Window>

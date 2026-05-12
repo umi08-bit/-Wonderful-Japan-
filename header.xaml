@@ -45,7 +45,11 @@
 
                 <StackPanel Orientation="Horizontal" Cursor="">
                     
-                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                    <!--ハンバーガーメニュー-->
+                    <ToggleButton 
+                        x:Name="MenuToggleButton"
+                        Click="MenuToggleButton_Click"
+                        Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
 
                     <Button Cursor="Hand" Style="{StaticResource MaterialDesignToolButton}">
                         <Image Source="Images/japan.jpg" Width="32" Height="32" />
