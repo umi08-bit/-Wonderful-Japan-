@@ -37,38 +37,88 @@
 
 
 
-       <Grid>
+       <Grid Cursor="">
                 <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
 
-                <!--上のメニューbutton-->
-                <Border Grid.Row="0" Background="{StaticResource Base_Color}">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    
-                    <local:Menu_Button Margin="20"/>
-                    <local:Menu_Button Margin="20"/>
-                    <local:Menu_Button Margin="20"/>
-
-                </StackPanel>
-                </Border>
-
-                <!--スクロールバーを配置して、横にも縦にも自動的に表示される-->
-            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="0,20,0,0"
-                          materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">
-                            <!--スクロールバーに触れていないときは非表示-->
                 
-                <UniformGrid Columns="4" Margin="20" Grid.Row="1">
-                    <local:card Margin="10"/>
-                    <local:card Margin="10"/>
-                    <local:card Margin="10"/>
-                    <local:card Margin="10"/>
-                    <local:card Margin="10"/>
-                    <local:card Margin="10"/>
-                </UniformGrid>
-          </ScrollViewer>
+                <!--親スクロールバーを配置-->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="0,20,0,0"
+              materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">
+                    <StackPanel>
+
+                        <!--上のデカい写真-->
+                        <Grid Height="300">
+                            <Image Source="/images/take.jpg" Stretch="UniformToFill"/>
+                            <TextBlock Text="おすすめの文化" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="{StaticResource Main_Color}" Margin="40,0,0,10"/>
+
+                        </Grid>
+                        
+                        <!--見出しの文-->
+                        <TextBlock Text="おすすめの文化" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Sub_Color}" Margin="40,0,0,10"/>
+
+
+
+
+                        <!--子スクロールバーに触れていないときは非表示-->
+                        <ScrollViewer 
+                            Padding="0,0,0,25" 
+                            HorizontalScrollBarVisibility="Visible" 
+                            VerticalScrollBarVisibility="Disabled" 
+                            Margin="0,0,0,30" 
+                            materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
+                            PreviewMouseWheel="HorizontalScroll">
+                            <!--一枚のパネルで複数のパネルをまとめる-->
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
+                                <!--カードを呼び出し配置-->
+
+                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
+                                <local:card Margin="10" Title="タイトル2" Description="説明文2"/>
+                                <local:card Margin="10" Title="タイトル3" Description="説明文3"/>
+                                <local:card Margin="10" Title="タイトル4" Description="説明文4"/>
+                                <local:card Margin="10" Title="タイトル5" Description="説明文5"/>
+                                <local:card Margin="10" Title="タイトル6" Description="説明文6"/>
+                                <local:card Margin="10" Title="タイトル7" Description="説明文7"/>
+                                <local:card Margin="10" Title="タイトル8" Description="説明文8"/>
+                                <local:card Margin="10" Title="タイトル9" Description="説明文9"/>
+
+                            </StackPanel>
+                        </ScrollViewer>
+                        
+                        <!--見出しの文-->
+                        
+                        <TextBlock Text="おすすめの文化" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Sub_Color}" Margin="40,0,0,10"/>
+                        <!--子スクロールバー配置-->
+
+                        <ScrollViewer 
+                            Padding="0,0,0,50" 
+                            HorizontalScrollBarVisibility="Visible" 
+                            VerticalScrollBarVisibility="Disabled"
+                            Margin="0,0,0,30" 
+                            materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
+                            PreviewMouseWheel="HorizontalScroll">
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
+
+                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
+                                <local:card Margin="10" Title="タイトル2" Description="説明文2"/>
+                                <local:card Margin="10" Title="タイトル3" Description="説明文3"/>
+                                <local:card Margin="10" Title="タイトル4" Description="説明文4"/>
+                                <local:card Margin="10" Title="タイトル5" Description="説明文5"/>
+                                <local:card Margin="10" Title="タイトル6" Description="説明文6"/>
+                                <local:card Margin="10" Title="タイトル7" Description="説明文7"/>
+                                <local:card Margin="10" Title="タイトル8" Description="説明文8"/>
+                                <local:card Margin="10" Title="タイトル9" Description="説明文9"/>
+
+                            </StackPanel>
+                        </ScrollViewer>
+                        <Border Height="60" Background="Transparent" />
+
+
+                    </StackPanel>
+                </ScrollViewer>
            
            
           </Grid>

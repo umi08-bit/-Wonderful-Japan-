@@ -5,7 +5,7 @@
               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
               xmlns:local="clr-namespace:UI_application_UX" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
               mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Cursor="">
     <Grid>
         <materialDesign:Card Width="200">
             <Grid Cursor="">
@@ -26,67 +26,63 @@
                 <Border Grid.Row="2" Background="{StaticResource Base_Color}" />
                 <!--カードのボタン-->
                 <Button
-Grid.Row="0"
-Margin="0,0,16,-20"
-HorizontalAlignment="Right"
-VerticalAlignment="Bottom"
-Background="{StaticResource Accsent_Color}"
-Foreground="{StaticResource Base_Color}"
-Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Cursor="Hand">
+                  Grid.Row="0"
+                  Margin="0,0,16,-20"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Bottom"
+                  Background="{StaticResource Accsent_Color}"
+                  Foreground="{StaticResource Base_Color}"
+                  Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Cursor="Hand">
                     <materialDesign:PackIcon
-  Kind="Map" Cursor="" />
+                     Kind="Map" Cursor="" />
                 </Button>
 
 
                 <StackPanel
-Grid.Row="1"
-Margin="8,24,8,0">
+                  Grid.Row="1"
+                  Margin="8,24,8,0">
                     <!--タイトル部分-->
-                    <TextBlock
-  FontWeight="Bold">
-日本の国旗
-                    </TextBlock>
+                    <TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                               FontSize="24"
+                               FontWeight="Bold"/>
+                    
                     <!--説明文の部分-->
-                    <TextBlock
-  VerticalAlignment="Center"
-  Text="竹島は日本の領土です。"
-  TextWrapping="Wrap" />
+                    <TextBlock Text="{Binding Description, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                               TextAlignment="Center"/>
                 </StackPanel>
 
 
                 <StackPanel
-Grid.Row="2"
-Margin="8"
-HorizontalAlignment="Right"
-Orientation="Horizontal" Cursor="Hand">
+                  Grid.Row="2"
+                  Margin="8"
+                  HorizontalAlignment="Right"
+                  Orientation="Horizontal" Cursor="Hand">
 
                     <!--下のボタンの部分-->
-                    <Button
-  Width="30"
-  Padding="2,0,2,0"
-  materialDesign:RippleAssist.IsCentered="True"
-  Foreground="{StaticResource Sub_Color}"
-  Style="{StaticResource MaterialDesignToolButton}" Cursor="Hand">
-                        <materialDesign:PackIcon
-    Kind="ShareVariant" />
-                    </Button>
-                    <Button
-  Width="30"
-  Padding="2,0,2,0"
-  materialDesign:RippleAssist.IsCentered="True"
-  Foreground="{StaticResource Sub_Color}"
-  Style="{StaticResource MaterialDesignToolButton}">
-                        <materialDesign:PackIcon
-    Kind="Heart" />
-                    </Button>
+                <Button
+                 Width="30"
+                 Padding="2,0,2,0"
+                 materialDesign:RippleAssist.IsCentered="True"
+                 Foreground="{StaticResource Sub_Color}"
+                 Style="{StaticResource MaterialDesignToolButton}" Cursor="Hand">
+                        <materialDesign:PackIcon Kind="ShareVariant" />
+                 </Button>
+                    
+                    
+                 <Button
+                 Width="30"
+                 Padding="2,0,2,0"
+                 materialDesign:RippleAssist.IsCentered="True"
+                 Foreground="{StaticResource Sub_Color}"
+                 Style="{StaticResource MaterialDesignToolButton}">
+                        <materialDesign:PackIcon Kind="Heart" />
+                 </Button>
 
 
                     <materialDesign:PopupBox Cursor="" Foreground="{StaticResource Sub_Color}">
                         <StackPanel>
-                            <Button
-      Content="More" />
-                            <Button
-      Content="Options" />
+                            <Button Content="More" />
+                            <Button Content="Options" />
                         </StackPanel>
                     </materialDesign:PopupBox>
                 </StackPanel>

@@ -22,5 +22,23 @@ namespace UI_application_UX
         {
             InitializeComponent();
         }
+        public static readonly DependencyProperty TitleProperty =
+        DependencyProperty.Register("Title", typeof(string), typeof(card), new PropertyMetadata("デフォルトタイトル"));
+
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        public static readonly DependencyProperty DescriptionProperty =
+        DependencyProperty.Register("Description", typeof(string), typeof(card), new PropertyMetadata("デフォルト説明文"));
+
+        public string Description
+        {
+            get { return (string)GetValue(DescriptionProperty); }
+            set { SetValue(DescriptionProperty, value); }
+        }
+
     }
 }
