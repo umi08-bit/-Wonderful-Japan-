@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace UI_application_UX
 {
     /// <summary>
@@ -20,7 +21,35 @@ namespace UI_application_UX
         {
             InitializeComponent();
         }
+        //マウスホイールを横スクロールに変換するイベントハンドラー
+        private void HorizontalScroll(object sender, MouseWheelEventArgs e)
+        {
 
-        
+            ScrollViewer scrollViewer = sender as ScrollViewer;
+
+            if (scrollViewer != null)
+            {
+
+                if (e.Delta > 0)
+                {
+                    scrollViewer.LineLeft();
+                    scrollViewer.LineLeft();
+                }
+                else
+                {
+                    scrollViewer.LineRight();
+                    scrollViewer.LineRight();
+
+                }
+
+                e.Handled = true;
+
+            }
+
+
+
+        }
+
+
     }
 }
