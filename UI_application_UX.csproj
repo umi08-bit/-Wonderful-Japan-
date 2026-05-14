@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\head.jpg" />
+    <None Remove="images\Head1.png" />
     <None Remove="images\japan.jpg" />
+    <None Remove="images\rogo.jpg" />
     <None Remove="images\take.jpg" />
     <None Remove="images\ロゴ.png" />
   </ItemGroup>
@@ -19,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\Head1.png" />
     <Resource Include="images\japan.jpg" />
+    <Resource Include="images\rogo.jpg" />
     <Resource Include="images\take.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
