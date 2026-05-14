@@ -7,68 +7,60 @@
             mc:Ignorable="d"
             Background="{StaticResource Base_Color}">
 
-    <Grid>
-        <materialDesign:ColorZone Padding="16" Mode="Standard" Background="{StaticResource Accsent_Color}" Foreground="{StaticResource Base_Color}" MouseLeftButtonDown="header">
+  
+        <materialDesign:ColorZone Height="Auto" Padding="16" Mode="Standard" Background="{StaticResource Accsent_Color}" Foreground="{StaticResource Base_Color}" MouseLeftButtonDown="header">
 
-            <DockPanel Cursor="">
-                <!--ハンバーガーメニューを作ってる部分　一旦必要ないので保留中--><!--
-                <materialDesign:PopupBox
-             DockPanel.Dock="Right"
-             PlacementMode="BottomAndAlignRightEdges">
-                    --><!--右側にピタッとくっつける--><!--
-                    <ListBox>
-                        <ListBoxItem Content="Hello World" />
-                        <ListBoxItem Content="Nice Popup" />
-                        <ListBoxItem Content="アプリ終了" Selected="Exit_Button"/>
-                        --><!--アプリの終了ボタン--><!--
-                    </ListBox>
+        <Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
 
 
-                </materialDesign:PopupBox>-->
-
-                <Button DockPanel.Dock="Right" Click="Exit_Button" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
-                    <materialDesign:PackIcon Kind="WindowClose" />
+                <Button  Click="Minisize" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Height="20" Width="20" Kind="WindowMinimize" />
                 </Button>
-
-                <Button DockPanel.Dock="Right" Click="Maxsize" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
-                    <materialDesign:PackIcon Kind="WindowMaximize" />
+                <!--最小化ボタン-->
+                
+                <Button  Click="Maxsize" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
+                    <materialDesign:PackIcon Height="20" Width="20" Kind="WindowMaximize" />
                 </Button>
                 <!--最大化ボタン-->
 
-
-
-                <Button DockPanel.Dock="Right" Click="Minisize" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}">
-                    <materialDesign:PackIcon Kind="WindowMinimize" />
+                
+                <Button   Click="Exit_Button" Foreground="{StaticResource Main_Color}" Style="{StaticResource MaterialDesignToolButton}" Cursor="Hand">
+                    <materialDesign:PackIcon Height="20" Width="20" Kind="WindowClose" Cursor="" />
                 </Button>
-                <!--最小化ボタン-->
+
+            </StackPanel>
 
 
-                <StackPanel Orientation="Horizontal" Cursor="">
-                    
-                    <!--ハンバーガーメニュー-->
-                    <ToggleButton 
-                        x:Name="MenuToggleButton"
-                        Click="MenuToggleButton_Click"
-                        Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
-
-                    <Button Cursor="Hand" Style="{StaticResource MaterialDesignToolButton}">
-                        <Image Source="Images/japan.jpg" Width="32" Height="32" />
-                    </Button>
-                    <!--日本の国旗のアイコン-->
+          
+                <!--ハンバーガーメニュー-->
+            <ToggleButton Width="50" Height="50"
+                    HorizontalAlignment="Left"
+     x:Name="MenuToggleButton"
+     Click="MenuToggleButton_Click"
+     Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
 
 
+                <!--<StackPanel Orientation="Horizontal" Cursor="">-->
+
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <TextBlock Text="日本の文化" 
+           FontFamily="HG行書体" 
+           FontSize="24" 
+           Foreground="{StaticResource Main_Color}" />
+                </Grid>
+            <!--アプリ　ロゴ-->
+
+          
 
 
 
-                    <TextBlock DockPanel.Dock="Left" Margin="16,0,0,0" VerticalAlignment="Center" Text="日本の文化" />
-                    <!--タイトルのテキスト-->
 
+            <!--</StackPanel>-->
 
-                </StackPanel>
+        </Grid>
 
-            </DockPanel>
+    </materialDesign:ColorZone>
 
-        </materialDesign:ColorZone>
-
-    </Grid>
 </UserControl>

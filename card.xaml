@@ -45,7 +45,7 @@
                     <TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
                                FontSize="24"
                                FontWeight="Bold"/>
-                    
+
                     <!--説明文の部分-->
                     <TextBlock Text="{Binding Description, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
                                TextAlignment="Center"/>
@@ -59,24 +59,24 @@
                   Orientation="Horizontal" Cursor="Hand">
 
                     <!--下のボタンの部分-->
-                <Button
+                    <Button
                  Width="30"
                  Padding="2,0,2,0"
                  materialDesign:RippleAssist.IsCentered="True"
                  Foreground="{StaticResource Sub_Color}"
                  Style="{StaticResource MaterialDesignToolButton}" Cursor="Hand">
                         <materialDesign:PackIcon Kind="ShareVariant" />
-                 </Button>
-                    
-                    
-                 <Button
+                    </Button>
+
+
+                    <Button
                  Width="30"
                  Padding="2,0,2,0"
                  materialDesign:RippleAssist.IsCentered="True"
                  Foreground="{StaticResource Sub_Color}"
                  Style="{StaticResource MaterialDesignToolButton}">
                         <materialDesign:PackIcon Kind="Heart" />
-                 </Button>
+                    </Button>
 
 
                     <materialDesign:PopupBox Cursor="" Foreground="{StaticResource Sub_Color}">
