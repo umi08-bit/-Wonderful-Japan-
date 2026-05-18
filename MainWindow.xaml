@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_application_UX" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -58,7 +59,7 @@
                         </Grid>
 
                         <!--見出しの文-->
-                        <TextBlock Text="おすすめの文化" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Sub_Color}" Margin="40,0,0,10"/>
+                        <TextBlock Text="歴史ある建築物" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Sub_Color}" Margin="40,0,0,10"/>
 
 
 
@@ -74,16 +75,67 @@
                             <!--一枚のパネルで複数のパネルをまとめる-->
                             <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
                                 <!--カードを呼び出し配置-->
+                                
+                                <!--ユニコォォォン-->
+                                <local:card Margin="10" Title="ユニコーンガンダム" 
+                                            Description="東京・お台場にそびえ立つ実物大のガンダム立像。日本の圧倒的な技術力とアニメ文化の融合を象徴する、現代の新たな「文化遺産」とも呼べる大迫力のモニュメントです。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=実物大ユニコーンガンダム立像"
+                                            imageParh="/images/yuni.png"/>
+                                <!--法隆寺-->
+                                <local:card Margin="10" Title="法隆寺" 
+                                            Description="奈良県にある、聖徳太子ゆかりの由緒ある寺院です。五重塔や金堂など、世界最古の木造建築群が当時の姿のまま残されており、1993年に日本初の世界文化遺産として登録されました。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=法隆寺"
+                                            imageParh="/images/ryu.png"/>
+                                <!--姫路城-->
+                                <local:card Margin="10" Title="姫路城" 
+                                            Description="兵庫県にある日本初の世界文化遺産です。白く美しい姿から「白鷺城」とも呼ばれ、400年以上前から奇跡的に残る大天守は国宝に指定されています。"
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=姫路城"
+                                            imageParh="/images/himezi.png"/>
 
-                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
-                                <local:card Margin="10" Title="タイトル2" Description="説明文2"/>
-                                <local:card Margin="10" Title="タイトル3" Description="説明文3"/>
-                                <local:card Margin="10" Title="タイトル4" Description="説明文4"/>
-                                <local:card Margin="10" Title="タイトル5" Description="説明文5"/>
-                                <local:card Margin="10" Title="タイトル6" Description="説明文6"/>
-                                <local:card Margin="10" Title="タイトル7" Description="説明文7"/>
-                                <local:card Margin="10" Title="タイトル8" Description="説明文8"/>
-                                <local:card Margin="10" Title="タイトル9" Description="説明文9"/>
+                                <local:card Margin="10" Title="厳島神社"
+                                            Description="海の上に建つという世界でも類を見ない構造を持つ、広島県の世界文化遺産です。満潮時には海に浮かんでいるように見える大鳥居や朱塗りの社殿は、息をのむほどの美しさです。"
+                                            MapOpenRequested="Card_MapOpenRequested"
+                                            MapUrl="https://www.google.com/maps?q=厳島神社"
+                                            imageParh="/images/ituku.png"/>
+
+                                <local:card Margin="10" Title="清水寺" 
+                                            Description="「清水の舞台から飛び降りる」の語源にもなった京都を代表する寺院です。釘を一本も使わずに組み上げられた巨大な木造の舞台からは、京都市街や四季折々の絶景を一望できます。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=清水寺"
+                                            imageParh="/images/kiyomizu.png"/>
+
+                                <local:card Margin="10" Title="風見鶏の館"
+                                            Description="神戸の北野異人館街を代表する、レンガ造りの美しい西洋館です。明治時代にドイツ人貿易商の住宅として建てられ、屋根の上に立つ風見鶏は神戸の街のシンボルとして愛されています。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=風見鶏の館"
+                                            imageParh="/images/kazami.png"/>
+
+                                <local:card Margin="10" Title="金閣寺"
+                                            Description="黄金に輝く京都のシンボルです。鏡のように水面に映る姿は圧巻で、室町時代の栄華を今に伝える世界文化遺産として、国内外から絶大な人気を集めています。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=金閣寺"
+                                            imageParh="/images/kin.png"/>
+
+                                <local:card Margin="10" Title="大阪城" 
+                                            Description="豊臣秀吉が築いた大坂城の跡地に建つ、大阪のシンボルです。現在の天守閣は昭和に復興されたものですが、周囲を囲む巨大な石垣や黄金に輝く装飾は圧巻で、圧倒的なスケールを誇ります。"
+                                            MapOpenRequested="Card_MapOpenRequested"
+                                            MapUrl="https://www.google.com/maps?q=大阪城"
+                                            imageParh="/images/oosaka.png"/>
+
+                                <local:card Margin="10" Title="松本城"
+                                            Description="黒漆塗りの外壁が美しい長野県の国宝です。白鷺城と呼ばれる姫路城と対極をなす「烏城」とも呼ばれ、現存する五重六階の天守としては日本最古の歴史を誇ります。" 
+                                            MapOpenRequested="Card_MapOpenRequested"
+                                            MapUrl="https://www.google.com/maps?q=松本城"
+                                            imageParh="/images/matu.png"/>
+
+                                <local:card Margin="10" Title="道後温泉本館" 
+                                            Description="愛媛県にある日本最古級の温泉です。ジブリ映画のモデルにもなったと言われる複雑で美しい木造三層楼の建築は、国の重要文化財でありながら現在も公衆浴場として活躍しています。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=道後温泉本館"
+                                            imageParh="/images/duogo.png"/>
 
                             </StackPanel>
                         </ScrollViewer>
@@ -102,15 +154,15 @@
                             PreviewMouseWheel="HorizontalScroll">
                             <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
 
-                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
-                                <local:card Margin="10" Title="タイトル2" Description="説明文2"/>
-                                <local:card Margin="10" Title="タイトル3" Description="説明文3"/>
-                                <local:card Margin="10" Title="タイトル4" Description="説明文4"/>
-                                <local:card Margin="10" Title="タイトル5" Description="説明文5"/>
-                                <local:card Margin="10" Title="タイトル6" Description="説明文6"/>
-                                <local:card Margin="10" Title="タイトル7" Description="説明文7"/>
-                                <local:card Margin="10" Title="タイトル8" Description="説明文8"/>
-                                <local:card Margin="10" Title="タイトル9" Description="説明文9"/>
+                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
+                                <local:card Margin="10" Title="タイトル2" Description="説明文2" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
+                                <local:card Margin="10" Title="タイトル3" Description="説明文3" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
+                                <local:card Margin="10" Title="タイトル4" Description="説明文4" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
+                                <local:card Margin="10" Title="タイトル5" Description="説明文5" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
+                                <local:card Margin="10" Title="タイトル6" Description="説明文6" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
+                                <local:card Margin="10" Title="タイトル7" Description="説明文7" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
+                                <local:card Margin="10" Title="タイトル8" Description="説明文8" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
+                                <local:card Margin="10" Title="タイトル9" Description="説明文9" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
 
                             </StackPanel>
                         </ScrollViewer>
@@ -127,26 +179,54 @@
     PreviewMouseWheel="HorizontalScroll">
                             <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
 
-                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"/>
-                                <local:card Margin="10" Title="タイトル2" Description="説明文2"/>
-                                <local:card Margin="10" Title="タイトル3" Description="説明文3"/>
-                                <local:card Margin="10" Title="タイトル4" Description="説明文4"/>
-                                <local:card Margin="10" Title="タイトル5" Description="説明文5"/>
-                                <local:card Margin="10" Title="タイトル6" Description="説明文6"/>
-                                <local:card Margin="10" Title="タイトル7" Description="説明文7"/>
-                                <local:card Margin="10" Title="タイトル8" Description="説明文8"/>
-                                <local:card Margin="10" Title="タイトル9" Description="説明文9"/>
+                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
+                                <local:card Margin="10" Title="タイトル2" Description="説明文2" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
+                                <local:card Margin="10" Title="タイトル3" Description="説明文3" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
+                                <local:card Margin="10" Title="タイトル4" Description="説明文4" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
+                                <local:card Margin="10" Title="タイトル5" Description="説明文5" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
+                                <local:card Margin="10" Title="タイトル6" Description="説明文6" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
+                                <local:card Margin="10" Title="タイトル7" Description="説明文7" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
+                                <local:card Margin="10" Title="タイトル8" Description="説明文8" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
+                                <local:card Margin="10" Title="タイトル9" Description="説明文9" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
 
                             </StackPanel>
                         </ScrollViewer>
-                        <Border Height="60" Background="Transparent" />
+
+                        <!--マップをのダイアログを表示する-->
+                        <materialDesign:DialogHost x:Name="MainDialogHost" Identifier="RootDialog">
+                            <materialDesign:DialogHost.DialogContent>
+                                <!--表示画面の大きさ-->
+                                <Grid Width="700" Height="600" Margin="16">
+                                    <Grid.RowDefinitions>
+                                        <!-- ブラウザを表示する部分 -->
+                                        <RowDefinition Height="*" />
+                                        <!--ボタンを設置する部分-->
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <!--ブラウザを表示する-->
+                                    <wv2:WebView2 x:Name="MapWebView" Grid.Row="0" MinHeight="400"/>
+
+                                    <!--閉じるボタン-->
+                                    <Button Grid.Row="1" Content="閉じる" 
+                    Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                    Margin="0,10,0,0" HorizontalAlignment="Right" />
+                                </Grid>
+                            </materialDesign:DialogHost.DialogContent>
+
+                            <materialDesign:DrawerHost x:Name="MapDrawer">
+                            </materialDesign:DrawerHost>
+                        </materialDesign:DialogHost>
 
 
                     </StackPanel>
-                </ScrollViewer>
+                   
 
+                </ScrollViewer>
+               
 
             </Grid>
+                
         </materialDesign:DrawerHost>
 
     </DockPanel>

@@ -9,25 +9,46 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\duogo.png" />
     <None Remove="images\head.jpg" />
     <None Remove="images\Head1.png" />
+    <None Remove="images\himezi.png" />
+    <None Remove="images\ituku.png" />
     <None Remove="images\japan.jpg" />
+    <None Remove="images\kazami.png" />
+    <None Remove="images\kin.png" />
+    <None Remove="images\kiyomizu.png" />
+    <None Remove="images\matu.png" />
+    <None Remove="images\oosaka.png" />
     <None Remove="images\rogo.jpg" />
+    <None Remove="images\ryu.png" />
     <None Remove="images\take.jpg" />
+    <None Remove="images\yuni.png" />
     <None Remove="images\ロゴ.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.3.2" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3967.48" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\duogo.png" />
     <Resource Include="images\Head1.png" />
+    <Resource Include="images\himezi.png" />
+    <Resource Include="images\ituku.png" />
     <Resource Include="images\japan.jpg" />
+    <Resource Include="images\kazami.png" />
+    <Resource Include="images\kin.png" />
+    <Resource Include="images\kiyomizu.png" />
+    <Resource Include="images\matu.png" />
+    <Resource Include="images\oosaka.png" />
     <Resource Include="images\rogo.jpg" />
+    <Resource Include="images\ryu.png" />
     <Resource Include="images\take.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\yuni.png" />
     <Resource Include="images\ロゴ.png" />
   </ItemGroup>
 

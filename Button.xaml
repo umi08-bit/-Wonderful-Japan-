@@ -8,10 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Cursor="">
 
+        <!--赤いボタン-->
         <Button
                 Background="{StaticResource Accsent_Color}"
                 Foreground="{StaticResource Main_Color}"
-                Height="30"
+                Height="60"
                 materialDesign:ButtonAssist.CornerRadius="5"
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
