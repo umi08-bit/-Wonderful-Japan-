@@ -19,13 +19,14 @@
                 </Grid.RowDefinitions>
 
                 <!--カードの写真部分-->
-                <Image Height="140" Source="/images/take.jpg" Stretch="UniformToFill" />
+                <Image Height="140" Source="{Binding imageParh, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" Stretch="UniformToFill" />
 
                 <Border Grid.Row="1" Background="{StaticResource Base_Color}" Cursor="" />
 
                 <Border Grid.Row="2" Background="{StaticResource Base_Color}" />
                 <!--カードのボタン-->
                 <Button
+                  Click="OpenMap_Click"
                   Grid.Row="0"
                   Margin="0,0,16,-20"
                   HorizontalAlignment="Right"
@@ -48,7 +49,8 @@
 
                     <!--説明文の部分-->
                     <TextBlock Text="{Binding Description, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
-                               TextAlignment="Center"/>
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
                 </StackPanel>
 
 

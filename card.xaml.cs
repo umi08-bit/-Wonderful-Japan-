@@ -18,13 +18,16 @@ namespace UI_application_UX
     /// </summary>
     public partial class card : UserControl
     {
+        public event RoutedEventHandler MapOpenRequested;
         public card()
         {
             InitializeComponent();
         }
+        public string MapUrl { get; set; } = "https://www.google.com/maps";
         public static readonly DependencyProperty TitleProperty =
         DependencyProperty.Register("Title", typeof(string), typeof(card), new PropertyMetadata("デフォルトタイトル"));
-
+        public static readonly DependencyProperty imageParhProperty =
+        DependencyProperty.Register("imageParh", typeof(string), typeof(card), new PropertyMetadata("/images/タコ.png"));
         public string Title
         {
             get { return (string)GetValue(TitleProperty); }
@@ -38,6 +41,17 @@ namespace UI_application_UX
         {
             get { return (string)GetValue(DescriptionProperty); }
             set { SetValue(DescriptionProperty, value); }
+        }
+
+        public string imageParh
+        {
+            get { return (string)GetValue(imageParhProperty); }
+            set { SetValue(imageParhProperty, value); }
+        }
+
+        private void OpenMap_Click(object sender, RoutedEventArgs e)
+        {
+            MapOpenRequested?.Invoke(this, e);
         }
 
     }

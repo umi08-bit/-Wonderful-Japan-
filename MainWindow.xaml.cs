@@ -29,7 +29,7 @@ namespace UI_application_UX
 
             if (scrollViewer != null)
             {
-
+                // マウスホイールの回転方向に応じて、横スクロールを行う
                 if (e.Delta > 0)
                 {
                     scrollViewer.LineLeft();
@@ -48,6 +48,23 @@ namespace UI_application_UX
 
 
 
+        }
+        private void Card_MapOpenRequested(object sender, RoutedEventArgs e)
+        {
+            // 信号を送ってきたパーツをcardとして認識する
+            var clickedCard = sender as card;
+
+            if (clickedCard != null)
+            {
+                // そのカードが持っている固有のURLを抜き出す
+                string targetUrl = clickedCard.MapUrl;
+
+                // モニターにそのURLを表示
+                MapWebView.Source = new Uri(targetUrl);
+
+                // ダイアログを展開
+                MainDialogHost.IsOpen = true;
+            }
         }
 
 
