@@ -9,10 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\arasi.png" />
+    <None Remove="images\dou.png" />
     <None Remove="images\duogo.png" />
+    <None Remove="images\fuji.png" />
+    <None Remove="images\ha-ba.png" />
     <None Remove="images\head.jpg" />
     <None Remove="images\Head1.png" />
     <None Remove="images\himezi.png" />
+    <None Remove="images\hitati.png" />
     <None Remove="images\ituku.png" />
     <None Remove="images\japan.jpg" />
     <None Remove="images\kazami.png" />
@@ -22,7 +27,10 @@
     <None Remove="images\oosaka.png" />
     <None Remove="images\rogo.jpg" />
     <None Remove="images\ryu.png" />
+    <None Remove="images\same.png" />
+    <None Remove="images\Sample.png" />
     <None Remove="images\take.jpg" />
+    <None Remove="images\tomita.png" />
     <None Remove="images\yuni.png" />
     <None Remove="images\ロゴ.png" />
   </ItemGroup>
@@ -33,9 +41,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\arasi.png" />
+    <Resource Include="images\dou.png" />
     <Resource Include="images\duogo.png" />
+    <Resource Include="images\fuji.png" />
+    <Resource Include="images\ha-ba.png" />
     <Resource Include="images\Head1.png" />
     <Resource Include="images\himezi.png" />
+    <Resource Include="images\hitati.png" />
     <Resource Include="images\ituku.png" />
     <Resource Include="images\japan.jpg" />
     <Resource Include="images\kazami.png" />
@@ -45,9 +58,12 @@
     <Resource Include="images\oosaka.png" />
     <Resource Include="images\rogo.jpg" />
     <Resource Include="images\ryu.png" />
+    <Resource Include="images\same.png" />
+    <Resource Include="images\Sample.png" />
     <Resource Include="images\take.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\tomita.png" />
     <Resource Include="images\yuni.png" />
     <Resource Include="images\ロゴ.png" />
   </ItemGroup>

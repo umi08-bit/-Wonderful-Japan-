@@ -66,6 +66,40 @@ namespace UI_application_UX
                 MainDialogHost.IsOpen = true;
             }
         }
+        // 「建築物」ボタンが押された時
+        private void MenuArchitecture_Click(object sender, RoutedEventArgs e)
+        {
+            // ① まずメニューの引き出しを閉じる
+            NavDrawer.IsLeftDrawerOpen = false;
+
+            // ② UIの処理が落ち着いてから、ターゲットを画面に引っ張り出す（時間差攻撃！）
+            Dispatcher.InvokeAsync(() =>
+            {
+                TargetArchitecture.BringIntoView();
+            }, System.Windows.Threading.DispatcherPriority.ContextIdle);
+        }
+
+        // 「観光地」ボタンが押された時
+        private void MenuSightseeing_Click(object sender, RoutedEventArgs e)
+        {
+            NavDrawer.IsLeftDrawerOpen = false;
+
+            Dispatcher.InvokeAsync(() =>
+            {
+                TargetSightseeing.BringIntoView();
+            }, System.Windows.Threading.DispatcherPriority.ContextIdle);
+        }
+
+        // 「植物」ボタンが押された時
+        private void MenuPlants_Click(object sender, RoutedEventArgs e)
+        {
+            NavDrawer.IsLeftDrawerOpen = false;
+
+            Dispatcher.InvokeAsync(() =>
+            {
+                TargetPlants.BringIntoView();
+            }, System.Windows.Threading.DispatcherPriority.ContextIdle);
+        }
 
 
     }

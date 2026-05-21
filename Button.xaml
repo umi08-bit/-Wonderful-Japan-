@@ -10,6 +10,7 @@
 
         <!--赤いボタン-->
         <Button
+                Click="InnerButton_Click"
                 Background="{StaticResource Accsent_Color}"
                 Foreground="{StaticResource Main_Color}"
                 Height="60"
@@ -17,7 +18,7 @@
                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                 Style="{StaticResource MaterialDesignRaisedLightButton}"
                 ToolTip="MaterialDesignRaisedLightButton with Round Corners" Cursor="Hand">
-            <TextBlock Text="コンテンツ" />
+            <TextBlock Text="{Binding Button_Text, RelativeSource={RelativeSource AncestorType=UserControl}}" />
         </Button>
 
     </Grid>

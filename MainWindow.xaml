@@ -28,9 +28,9 @@
                 <Border Width="250" Background="{StaticResource Main_Color}">
                     <StackPanel>
                         <TextBlock Text="カテゴリー" FontSize="20" Margin="10" Foreground="{StaticResource Sub_Color}"/>
-                        <local:Button Margin="10"/>
-                        <local:Button Margin="10"/>
-                        <local:Button Margin="10"/>
+                        <local:Button Button_Text="建築物" Click="MenuArchitecture_Click" Margin="10" />
+                        <local:Button Button_Text="観光地" Click="MenuSightseeing_Click" Margin="10"/>
+                        <local:Button Button_Text="植物" Click="MenuPlants_Click" Margin="10"/>
                     </StackPanel>
                 </Border>
             </materialDesign:DrawerHost.LeftDrawerContent>
@@ -59,7 +59,12 @@
                         </Grid>
 
                         <!--見出しの文-->
-                        <TextBlock Text="歴史ある建築物" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Sub_Color}" Margin="40,0,0,10"/>
+                        <TextBlock Text="歴史ある建築物" 
+                                   FontSize="22"
+                                   FontWeight="Bold" 
+                                   Foreground="{StaticResource Sub_Color}" 
+                                   Margin="40,0,0,10"
+                                  />
 
 
 
@@ -73,9 +78,9 @@
                             materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
                             PreviewMouseWheel="HorizontalScroll">
                             <!--一枚のパネルで複数のパネルをまとめる-->
-                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10" x:Name="TargetArchitecture">
                                 <!--カードを呼び出し配置-->
-                                
+
                                 <!--ユニコォォォン-->
                                 <local:card Margin="10" Title="ユニコーンガンダム" 
                                             Description="東京・お台場にそびえ立つ実物大のガンダム立像。日本の圧倒的な技術力とアニメ文化の融合を象徴する、現代の新たな「文化遺産」とも呼べる大迫力のモニュメントです。" 
@@ -142,7 +147,12 @@
 
                         <!--見出しの文-->
 
-                        <TextBlock Text="おすすめの文化" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Sub_Color}" Margin="40,0,0,10"/>
+                        <TextBlock Text="おすすめの観光地"
+                                   FontSize="22"
+                                   FontWeight="Bold" 
+                                   Foreground="{StaticResource Sub_Color}"
+                                   Margin="40,0,0,10"
+                                   />
                         <!--子スクロールバー配置-->
 
                         <ScrollViewer 
@@ -152,22 +162,53 @@
                             Margin="0,0,0,30" 
                             materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
                             PreviewMouseWheel="HorizontalScroll">
-                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10" x:Name="TargetSightseeing">
 
-                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
-                                <local:card Margin="10" Title="タイトル2" Description="説明文2" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
-                                <local:card Margin="10" Title="タイトル3" Description="説明文3" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
-                                <local:card Margin="10" Title="タイトル4" Description="説明文4" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
-                                <local:card Margin="10" Title="タイトル5" Description="説明文5" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
-                                <local:card Margin="10" Title="タイトル6" Description="説明文6" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
-                                <local:card Margin="10" Title="タイトル7" Description="説明文7" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
-                                <local:card Margin="10" Title="タイトル8" Description="説明文8" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
-                                <local:card Margin="10" Title="タイトル9" Description="説明文9" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
+                                <local:card Margin="10" Title="富士山" 
+                                            Description="日本の象徴にして世界文化遺産。四季折々で姿を変える雄大なスケールは圧巻で、国内外から絶え間なく人が訪れる日本一の美しい独立峰です。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=富士山"
+                                            imageParh="/images/fuji.png"/>
+
+
+                                <local:card Margin="10" Title="道頓堀" 
+                                            Description="「食い倒れの街」大阪を象徴する大繁華街。巨大な動く看板や色鮮やかなネオンがひしめき合い、日本の活気とパワーを全身で感じられるスポットです。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=道頓堀"
+                                            imageParh="/images/dou.png"/>
+
+                                <local:card Margin="10" Title="神戸ハーバーランド" 
+                                            Description="美しい港の景色を満喫できる海辺の観光地。ポートタワーや観覧車が色鮮やかにライトアップされる夜景は格別で、洗練された港町の魅力を堪能できます。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=神戸ハーバーランド"
+                                            imageParh="/images/ha-ba.png"/>
+
+                               
+
+
+                                <local:card Margin="10" Title="嵐山" 
+                                            Description="京都を代表する景勝地です。天高く伸びる無数の竹が作り出す「竹林の小径」は、日常を忘れさせるほど幻想的で、日本の美意識と自然の調和を静かに感じられます。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=嵐山"
+                                            imageParh="/images/arasi.png"/>
+
+                                <local:card Margin="10" Title="沖縄美ら海水族館" 
+                                            Description="沖縄の美しい海を丸ごと体感できる世界最大級の水族館。巨大なアクリルパネル越しに悠々と泳ぐジンベエザメの姿は圧巻で、南国の神秘的な海の世界へと誘われます。" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=沖縄美ら海水族館"
+                                            imageParh="/images/same.png"/>
+
+
 
                             </StackPanel>
                         </ScrollViewer>
 
-                        <TextBlock Text="おすすめの文化" FontSize="22" FontWeight="Bold" Foreground="{StaticResource Sub_Color}" Margin="40,0,0,10"/>
+                        <TextBlock Text="植物の観光地" 
+                                   FontSize="22" 
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource Sub_Color}"
+                                   Margin="40,0,0,10"
+                                  />
                         <!--子スクロールバー配置-->
 
                         <ScrollViewer 
@@ -177,17 +218,42 @@
     Margin="0,0,0,30" 
     materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
     PreviewMouseWheel="HorizontalScroll">
-                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10">
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10"  x:Name="TargetPlants">
 
-                                <local:card Margin="10" Title="タイトル1" Description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
-                                <local:card Margin="10" Title="タイトル2" Description="説明文2" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
-                                <local:card Margin="10" Title="タイトル3" Description="説明文3" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
-                                <local:card Margin="10" Title="タイトル4" Description="説明文4" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
-                                <local:card Margin="10" Title="タイトル5" Description="説明文5" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
-                                <local:card Margin="10" Title="タイトル6" Description="説明文6" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=大阪"/>
-                                <local:card Margin="10" Title="タイトル7" Description="説明文7" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=京都"/>
-                                <local:card Margin="10" Title="タイトル8" Description="説明文8" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=奈良"/>
-                                <local:card Margin="10" Title="タイトル9" Description="説明文9" MapOpenRequested="Card_MapOpenRequested" MapUrl="https://www.google.com/maps?q=神戸"/>
+                                <local:card Margin="10" Title="国営ひたち海浜公園"  
+             Description="春には空と繋がるような青いネモフィラ、秋には真っ赤なコキアが丘一面を染め上げます。まるで別世界に迷い込んだかのような、圧倒的な花のパノラマを楽しめる公園です。" 
+             MapOpenRequested="Card_MapOpenRequested" 
+             MapUrl="https://www.google.com/maps?q=国営ひたち海浜公園"
+             imageParh="/images/hitati.png"/>
+
+
+                                <local:card Margin="10" Title="ファーム富田" 
+             Description="北海道の雄大な大地に広がる、日本を代表するラベンダー畑です。紫色の絨毯を敷き詰めたような美しい風景と豊かな香りが、訪れる人の心を優しく包み込んでくれます。" 
+             MapOpenRequested="Card_MapOpenRequested" 
+             MapUrl="https://www.google.com/maps?q=ファーム富田"
+             imageParh="/images/tomita.png"/>
+
+
+                                <local:card Margin="10" Title="あわじ花さじき" 
+             Description="明石海峡大橋を渡ってすぐの淡路島にあり、大阪湾を背景に四季折々の花畑が広がる絶景スポットです。空と海と花の絨毯が織りなす大パノラマは、自然の美しさを教えてくれます。" 
+             MapOpenRequested="Card_MapOpenRequested" 
+             MapUrl="https://www.google.com/maps?q=あわじ花さじき"
+             imageParh="/images/Sample.png"/>
+
+
+                                <local:card Margin="10" Title="あしかがフラワーパーク" 
+             Description="樹齢160年を超える大藤棚や、白藤のトンネルはまさに圧巻の一言。夜にはライトアップされ、世界中から賞賛される幻想的で生命力あふれる花の絶景を楽しめます。" 
+             MapOpenRequested="Card_MapOpenRequested" 
+             MapUrl="https://www.google.com/maps?q=あしかがフラワーパーク"
+             imageParh="/images/Sample.png"/>
+
+
+                                <local:card Margin="10" Title="吉野山" 
+             Description="日本一の桜の名所として知られ、春には山全体を約3万本の桜がピンク色に染め上げます。古くから人々の心を惹きつけてきた、圧倒的なスケールの自然美を堪能できます。" 
+             MapOpenRequested="Card_MapOpenRequested" 
+             MapUrl="https://www.google.com/maps?q=吉野山"
+             imageParh="/images/Sample.png"/>
+
 
                             </StackPanel>
                         </ScrollViewer>
@@ -220,13 +286,13 @@
 
 
                     </StackPanel>
-                   
+
 
                 </ScrollViewer>
-               
+
 
             </Grid>
-                
+
         </materialDesign:DrawerHost>
 
     </DockPanel>

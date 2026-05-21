@@ -44,7 +44,7 @@
                   Margin="8,24,8,0">
                     <!--タイトル部分-->
                     <TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
-                               FontSize="24"
+                               FontSize="20"
                                FontWeight="Bold"/>
 
                     <!--説明文の部分-->
