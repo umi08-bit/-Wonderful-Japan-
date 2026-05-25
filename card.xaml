@@ -14,8 +14,8 @@
                     <!--Row0　写真を入れる部分-->
                     <RowDefinition Height="150" />
                     <!--Row1　テキスト部分-->
-                    <RowDefinition Height="40" />
-                    <!--Row2　ボタン部分-->
+                    <!--<RowDefinition Height="40" />
+                    --><!--Row2　ボタン部分-->
                 </Grid.RowDefinitions>
 
                 <!--カードの写真部分-->
@@ -54,13 +54,13 @@
                 </StackPanel>
 
 
-                <StackPanel
+                <!--<StackPanel
                   Grid.Row="2"
                   Margin="8"
                   HorizontalAlignment="Right"
                   Orientation="Horizontal" Cursor="Hand">
 
-                    <!--下のボタンの部分-->
+                    --><!--下のボタンの部分--><!--
                     <Button
                  Width="30"
                  Padding="2,0,2,0"
@@ -87,7 +87,7 @@
                             <Button Content="Options" />
                         </StackPanel>
                     </materialDesign:PopupBox>
-                </StackPanel>
+                </StackPanel>-->
             </Grid>
         </materialDesign:Card>
     </Grid>
