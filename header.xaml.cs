@@ -60,5 +60,14 @@ namespace UI_application_UX
                 mainWindow.NavDrawer.IsLeftDrawerOpen = MenuToggleButton.IsChecked ?? false;
            
         }
+
+        public void ResetMenuButton()
+        {
+            
+            if (MenuToggleButton != null)
+            {
+                MenuToggleButton.IsChecked = false; // ボタンの状態をOFFに戻す
+            }
+        }
     }
 }

@@ -8,19 +8,68 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static MaterialDesignThemes.Wpf.Theme;
+using System.Windows.Threading;
+
 
 
 namespace UI_application_UX
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+        private List<string> _imagePaths = new List<string>
+        {
+            "/images/arasi.png",
+            "/images/fuji.png",
+            "/images/kiyomizu.png",
+            "/images/kin.png",
+            "/images/duogo.png",
+            "/images/ituku.png",
+            "/images/same.png",
+            "/images/oosaka.png",
+            "/images/yuni.png",
+            "/images/tomita.png",
+            "/images/himezi.png"
+
+        };
+
+        private int _currentImageIndex = 0; // 今何枚目を表示しているかのカウンター
+        private DispatcherTimer _timer;     // 時間を測るタイマー本体
+
         public MainWindow()
         {
             InitializeComponent();
+            StartSlideshow();
         }
+
+        // スライドショーの準備と開始
+        private void StartSlideshow()
+        {
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(3); // 切り替え時間設定
+            _timer.Tick += Timer_Tick;                 // 時間が来たら Timer_Tick を呼ぶ
+            _timer.Start();                            // タイマー起動
+        }
+
+        // 設定した時間が来るたびに自動で呼ばれるメソッド
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // 次の画像へインデックスを進める
+            _currentImageIndex++;
+
+            // もし最後の画像を過ぎたら、最初（0番目）に戻してループさせる
+            if (_currentImageIndex >= _imagePaths.Count)
+            {
+                _currentImageIndex = 0;
+            }
+
+            // 画像を切り替える
+            TopImage.Source = new BitmapImage(new Uri(_imagePaths[_currentImageIndex], UriKind.Relative));
+        }
+  
+
+
         //マウスホイールを横スクロールに変換するイベントハンドラー
         private void HorizontalScroll(object sender, MouseWheelEventArgs e)
         {
@@ -69,10 +118,11 @@ namespace UI_application_UX
         // 「建築物」ボタンが押された時
         private void MenuArchitecture_Click(object sender, RoutedEventArgs e)
         {
-            // ① まずメニューの引き出しを閉じる
+            // まずメニューの引き出しを閉じる
             NavDrawer.IsLeftDrawerOpen = false;
+            HeaderUI.ResetMenuButton();//ハンバーガーボタンをリセットする
 
-            // ② UIの処理が落ち着いてから、ターゲットを画面に引っ張り出す（時間差攻撃！）
+            // UIの処理が落ち着いてから、ターゲットを画面に引っ張り出す
             Dispatcher.InvokeAsync(() =>
             {
                 TargetArchitecture.BringIntoView();
@@ -83,7 +133,7 @@ namespace UI_application_UX
         private void MenuSightseeing_Click(object sender, RoutedEventArgs e)
         {
             NavDrawer.IsLeftDrawerOpen = false;
-
+            HeaderUI.ResetMenuButton(); //ハンバーガーボタンをリセットする
             Dispatcher.InvokeAsync(() =>
             {
                 TargetSightseeing.BringIntoView();
@@ -94,7 +144,7 @@ namespace UI_application_UX
         private void MenuPlants_Click(object sender, RoutedEventArgs e)
         {
             NavDrawer.IsLeftDrawerOpen = false;
-
+            HeaderUI.ResetMenuButton();//ハンバーガーボタンをリセットする
             Dispatcher.InvokeAsync(() =>
             {
                 TargetPlants.BringIntoView();

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_application_UX" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        xmlns:properties="clr-namespace:UI_application_UX.Properties"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -17,7 +18,7 @@
 
 
     <DockPanel>
-        <local:UserControl1 DockPanel.Dock="Top" />
+        <local:UserControl1 x:Name="HeaderUI" DockPanel.Dock="Top" />
 
 
 
@@ -52,8 +53,8 @@
                     <StackPanel>
 
                         <!--上のデカい写真-->
-                        <Grid>
-                            <Image Source="/images/rogo.jpg" Stretch="UniformToFill" Cursor=""/>
+                        <Grid Height="600">
+                            <Image Source="/images/ha-ba.png" x:Name="TopImage" Stretch="Uniform" Cursor=""/>
                             <!--<TextBlock Text="おすすめの文化" FontSize="50" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="{StaticResource Main_Color}" Margin="40,0,0,10"/>-->
 
                         </Grid>
@@ -64,6 +65,7 @@
                                    FontWeight="Bold" 
                                    Foreground="{StaticResource Sub_Color}" 
                                    Margin="40,0,0,10"
+                                   
                                   />
 
 
@@ -76,71 +78,83 @@
                             VerticalScrollBarVisibility="Disabled" 
                             Margin="0,0,0,30" 
                             materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
-                            PreviewMouseWheel="HorizontalScroll">
+                            PreviewMouseWheel="HorizontalScroll"
+                            >
                             <!--一枚のパネルで複数のパネルをまとめる-->
-                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10" x:Name="TargetArchitecture">
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10" x:Name="TargetArchitecture" >
                                 <!--カードを呼び出し配置-->
 
                                 <!--ユニコォォォン-->
-                                <local:card Margin="10" Title="ユニコーンガンダム" 
-                                            Description="東京・お台場にそびえ立つ実物大のガンダム立像。日本の圧倒的な技術力とアニメ文化の融合を象徴する、現代の新たな「文化遺産」とも呼べる大迫力のモニュメントです。" 
+                                <local:card Margin="10" Title="{x:Static properties:Resources.CardTitle_Unicorn}" 
+                                            Description="{x:Static properties:Resources.CardDesc_Unicorn}" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=実物大ユニコーンガンダム立像"
-                                            imageParh="/images/yuni.png"/>
+                                            imageParh="/images/yuni.png"
+                                            CacheMode="BitmapCache"
+                                            />
                                 <!--法隆寺-->
-                                <local:card Margin="10" Title="法隆寺" 
-                                            Description="奈良県にある、聖徳太子ゆかりの由緒ある寺院です。五重塔や金堂など、世界最古の木造建築群が当時の姿のまま残されており、1993年に日本初の世界文化遺産として登録されました。" 
+                                <local:card Margin="10" Title="{x:Static properties:Resources.CardTitle_houryuzi}" 
+                                            Description="{x:Static properties:Resources.CardDesc_houryuzi}" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=法隆寺"
-                                            imageParh="/images/ryu.png"/>
+                                            imageParh="/images/ryu.png"
+                                            CacheMode="BitmapCache"/>
                                 <!--姫路城-->
                                 <local:card Margin="10" Title="姫路城" 
                                             Description="兵庫県にある日本初の世界文化遺産です。白く美しい姿から「白鷺城」とも呼ばれ、400年以上前から奇跡的に残る大天守は国宝に指定されています。"
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=姫路城"
-                                            imageParh="/images/himezi.png"/>
+                                            imageParh="/images/himezi.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="厳島神社"
                                             Description="海の上に建つという世界でも類を見ない構造を持つ、広島県の世界文化遺産です。満潮時には海に浮かんでいるように見える大鳥居や朱塗りの社殿は、息をのむほどの美しさです。"
                                             MapOpenRequested="Card_MapOpenRequested"
                                             MapUrl="https://www.google.com/maps?q=厳島神社"
-                                            imageParh="/images/ituku.png"/>
+                                            imageParh="/images/ituku.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="清水寺" 
                                             Description="「清水の舞台から飛び降りる」の語源にもなった京都を代表する寺院です。釘を一本も使わずに組み上げられた巨大な木造の舞台からは、京都市街や四季折々の絶景を一望できます。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=清水寺"
-                                            imageParh="/images/kiyomizu.png"/>
+                                            imageParh="/images/kiyomizu.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="風見鶏の館"
                                             Description="神戸の北野異人館街を代表する、レンガ造りの美しい西洋館です。明治時代にドイツ人貿易商の住宅として建てられ、屋根の上に立つ風見鶏は神戸の街のシンボルとして愛されています。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=風見鶏の館"
-                                            imageParh="/images/kazami.png"/>
+                                            imageParh="/images/kazami.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="金閣寺"
                                             Description="黄金に輝く京都のシンボルです。鏡のように水面に映る姿は圧巻で、室町時代の栄華を今に伝える世界文化遺産として、国内外から絶大な人気を集めています。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=金閣寺"
-                                            imageParh="/images/kin.png"/>
+                                            imageParh="/images/kin.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="大阪城" 
                                             Description="豊臣秀吉が築いた大坂城の跡地に建つ、大阪のシンボルです。現在の天守閣は昭和に復興されたものですが、周囲を囲む巨大な石垣や黄金に輝く装飾は圧巻で、圧倒的なスケールを誇ります。"
                                             MapOpenRequested="Card_MapOpenRequested"
                                             MapUrl="https://www.google.com/maps?q=大阪城"
-                                            imageParh="/images/oosaka.png"/>
+                                            imageParh="/images/oosaka.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="松本城"
                                             Description="黒漆塗りの外壁が美しい長野県の国宝です。白鷺城と呼ばれる姫路城と対極をなす「烏城」とも呼ばれ、現存する五重六階の天守としては日本最古の歴史を誇ります。" 
                                             MapOpenRequested="Card_MapOpenRequested"
                                             MapUrl="https://www.google.com/maps?q=松本城"
-                                            imageParh="/images/matu.png"/>
+                                            imageParh="/images/matu.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="道後温泉本館" 
                                             Description="愛媛県にある日本最古級の温泉です。ジブリ映画のモデルにもなったと言われる複雑で美しい木造三層楼の建築は、国の重要文化財でありながら現在も公衆浴場として活躍しています。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=道後温泉本館"
-                                            imageParh="/images/duogo.png"/>
+                                            imageParh="/images/duogo.png"
+                                            CacheMode="BitmapCache"/>
 
                             </StackPanel>
                         </ScrollViewer>
@@ -152,6 +166,7 @@
                                    FontWeight="Bold" 
                                    Foreground="{StaticResource Sub_Color}"
                                    Margin="40,0,0,10"
+                                 
                                    />
                         <!--子スクロールバー配置-->
 
@@ -161,27 +176,32 @@
                             VerticalScrollBarVisibility="Disabled"
                             Margin="0,0,0,30" 
                             materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
-                            PreviewMouseWheel="HorizontalScroll">
-                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10" x:Name="TargetSightseeing">
+                            PreviewMouseWheel="HorizontalScroll"
+                             >
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10"  x:Name="TargetSightseeing">
 
                                 <local:card Margin="10" Title="富士山" 
                                             Description="日本の象徴にして世界文化遺産。四季折々で姿を変える雄大なスケールは圧巻で、国内外から絶え間なく人が訪れる日本一の美しい独立峰です。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=富士山"
-                                            imageParh="/images/fuji.png"/>
+                                            imageParh="/images/fuji.png"
+                                            CacheMode="BitmapCache"
+                                            />
 
 
                                 <local:card Margin="10" Title="道頓堀" 
                                             Description="「食い倒れの街」大阪を象徴する大繁華街。巨大な動く看板や色鮮やかなネオンがひしめき合い、日本の活気とパワーを全身で感じられるスポットです。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=道頓堀"
-                                            imageParh="/images/dou.png"/>
+                                            imageParh="/images/dou.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="神戸ハーバーランド" 
                                             Description="美しい港の景色を満喫できる海辺の観光地。ポートタワーや観覧車が色鮮やかにライトアップされる夜景は格別で、洗練された港町の魅力を堪能できます。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=神戸ハーバーランド"
-                                            imageParh="/images/ha-ba.png"/>
+                                            imageParh="/images/ha-ba.png"
+                                            CacheMode="BitmapCache"/>
 
                                
 
@@ -190,13 +210,42 @@
                                             Description="京都を代表する景勝地です。天高く伸びる無数の竹が作り出す「竹林の小径」は、日常を忘れさせるほど幻想的で、日本の美意識と自然の調和を静かに感じられます。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=嵐山"
-                                            imageParh="/images/arasi.png"/>
+                                            imageParh="/images/arasi.png"
+                                            CacheMode="BitmapCache"/>
 
                                 <local:card Margin="10" Title="沖縄美ら海水族館" 
                                             Description="沖縄の美しい海を丸ごと体感できる世界最大級の水族館。巨大なアクリルパネル越しに悠々と泳ぐジンベエザメの姿は圧巻で、南国の神秘的な海の世界へと誘われます。" 
                                             MapOpenRequested="Card_MapOpenRequested" 
                                             MapUrl="https://www.google.com/maps?q=沖縄美ら海水族館"
-                                            imageParh="/images/same.png"/>
+                                            imageParh="/images/same.png"
+                                            CacheMode="BitmapCache"/>
+
+                                <local:card Margin="10" Title="サンプル" 
+                                            Description="サンプル" 
+                                            MapOpenRequested="Card_MapOpenRequested" 
+                                            MapUrl="https://www.google.com/maps?q=神戸電子専門学校"
+                                            imageParh="/images/Sample.png"
+                                            CacheMode="BitmapCache"/>
+
+                                <local:card Margin="10" Title="サンプル" 
+            Description="サンプル" 
+            MapOpenRequested="Card_MapOpenRequested" 
+            MapUrl="https://www.google.com/maps?q=神戸電子専門学校"
+            imageParh="/images/Sample.png"/>
+
+                                <local:card Margin="10" Title="サンプル" 
+            Description="サンプル" 
+            MapOpenRequested="Card_MapOpenRequested" 
+            MapUrl="https://www.google.com/maps?q=神戸電子専門学校"
+            imageParh="/images/Sample.png"/>
+                                
+                                <local:card Margin="10" Title="サンプル" 
+            Description="サンプル" 
+            MapOpenRequested="Card_MapOpenRequested" 
+            MapUrl="https://www.google.com/maps?q=神戸電子専門学校"
+            imageParh="/images/Sample.png"/>
+
+
 
 
 
@@ -208,6 +257,7 @@
                                    FontWeight="Bold"
                                    Foreground="{StaticResource Sub_Color}"
                                    Margin="40,0,0,10"
+                                   
                                   />
                         <!--子スクロールバー配置-->
 
@@ -217,52 +267,81 @@
     VerticalScrollBarVisibility="Disabled"
     Margin="0,0,0,30" 
     materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
-    PreviewMouseWheel="HorizontalScroll">
-                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10"  x:Name="TargetPlants">
+    PreviewMouseWheel="HorizontalScroll"
+                            >
+                            <StackPanel Orientation="Horizontal" Margin="30,0,30,10"  x:Name="TargetPlants" >
 
                                 <local:card Margin="10" Title="国営ひたち海浜公園"  
              Description="春には空と繋がるような青いネモフィラ、秋には真っ赤なコキアが丘一面を染め上げます。まるで別世界に迷い込んだかのような、圧倒的な花のパノラマを楽しめる公園です。" 
              MapOpenRequested="Card_MapOpenRequested" 
              MapUrl="https://www.google.com/maps?q=国営ひたち海浜公園"
-             imageParh="/images/hitati.png"/>
+             imageParh="/images/hitati.png"
+                                            CacheMode="BitmapCache"
+                                           />
 
 
                                 <local:card Margin="10" Title="ファーム富田" 
              Description="北海道の雄大な大地に広がる、日本を代表するラベンダー畑です。紫色の絨毯を敷き詰めたような美しい風景と豊かな香りが、訪れる人の心を優しく包み込んでくれます。" 
              MapOpenRequested="Card_MapOpenRequested" 
              MapUrl="https://www.google.com/maps?q=ファーム富田"
-             imageParh="/images/tomita.png"/>
+             imageParh="/images/tomita.png"
+                                            CacheMode="BitmapCache"/>
 
 
                                 <local:card Margin="10" Title="あわじ花さじき" 
              Description="明石海峡大橋を渡ってすぐの淡路島にあり、大阪湾を背景に四季折々の花畑が広がる絶景スポットです。空と海と花の絨毯が織りなす大パノラマは、自然の美しさを教えてくれます。" 
              MapOpenRequested="Card_MapOpenRequested" 
              MapUrl="https://www.google.com/maps?q=あわじ花さじき"
-             imageParh="/images/Sample.png"/>
+             imageParh="/images/Sample.png"
+                                            CacheMode="BitmapCache"/>
 
 
                                 <local:card Margin="10" Title="あしかがフラワーパーク" 
              Description="樹齢160年を超える大藤棚や、白藤のトンネルはまさに圧巻の一言。夜にはライトアップされ、世界中から賞賛される幻想的で生命力あふれる花の絶景を楽しめます。" 
              MapOpenRequested="Card_MapOpenRequested" 
              MapUrl="https://www.google.com/maps?q=あしかがフラワーパーク"
-             imageParh="/images/Sample.png"/>
+             imageParh="/images/Sample.png"
+                                            CacheMode="BitmapCache"/>
 
 
                                 <local:card Margin="10" Title="吉野山" 
              Description="日本一の桜の名所として知られ、春には山全体を約3万本の桜がピンク色に染め上げます。古くから人々の心を惹きつけてきた、圧倒的なスケールの自然美を堪能できます。" 
              MapOpenRequested="Card_MapOpenRequested" 
              MapUrl="https://www.google.com/maps?q=吉野山"
-             imageParh="/images/Sample.png"/>
+             imageParh="/images/Sample.png"
+                                            CacheMode="BitmapCache"/>
 
+
+                                <local:card Margin="10" Title="サンプル" 
+            Description="サンプル" 
+            MapOpenRequested="Card_MapOpenRequested" 
+            MapUrl="https://www.google.com/maps?q=神戸電子専門学校"
+            imageParh="/images/Sample.png"
+                                            CacheMode="BitmapCache"/>
+
+                                <local:card Margin="10" Title="サンプル" 
+            Description="サンプル" 
+            MapOpenRequested="Card_MapOpenRequested" 
+            MapUrl="https://www.google.com/maps?q=神戸電子専門学校"
+            imageParh="/images/Sample.png"
+                                            CacheMode="BitmapCache"/>
+
+                                <local:card Margin="10" Title="サンプル" 
+            Description="サンプル" 
+            MapOpenRequested="Card_MapOpenRequested" 
+            MapUrl="https://www.google.com/maps?q=神戸電子専門学校"
+            imageParh="/images/Sample.png"
+                                            CacheMode="BitmapCache"/>
 
                             </StackPanel>
                         </ScrollViewer>
+                        <Border Height="30"></Border>
 
                         <!--マップをのダイアログを表示する-->
                         <materialDesign:DialogHost x:Name="MainDialogHost" Identifier="RootDialog">
                             <materialDesign:DialogHost.DialogContent>
                                 <!--表示画面の大きさ-->
-                                <Grid Width="700" Height="600" Margin="16">
+                                <Grid Width="700" Height="600" Margin="16" Background="{StaticResource Main_Color}">
                                     <Grid.RowDefinitions>
                                         <!-- ブラウザを表示する部分 -->
                                         <RowDefinition Height="*" />
@@ -271,12 +350,14 @@
                                     </Grid.RowDefinitions>
 
                                     <!--ブラウザを表示する-->
-                                    <wv2:WebView2 x:Name="MapWebView" Grid.Row="0" MinHeight="400"/>
+                                    <wv2:WebView2 x:Name="MapWebView" Grid.Row="0" MinHeight="400" />
 
                                     <!--閉じるボタン-->
                                     <Button Grid.Row="1" Content="閉じる" 
                     Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                    Margin="0,10,0,0" HorizontalAlignment="Right" />
+                    Margin="0,10,0,0" HorizontalAlignment="Right"
+                                            Background="{StaticResource Accsent_Color}"
+                                            Foreground="{StaticResource Base_Color}"/>
                                 </Grid>
                             </materialDesign:DialogHost.DialogContent>
 
