@@ -45,11 +45,8 @@
 
 
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center" >
-                    <TextBlock Text="日本の文化" 
-           FontFamily="HG行書体" 
-           FontSize="24" 
-           Foreground="{StaticResource Main_Color}" />
-                </Grid>
+                <Image Source="/images/title.png" Width="500" Height="100"/>
+            </Grid>
             <!--アプリ　ロゴ-->
 
           

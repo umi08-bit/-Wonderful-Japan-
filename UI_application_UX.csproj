@@ -30,6 +30,7 @@
     <None Remove="images\same.png" />
     <None Remove="images\Sample.png" />
     <None Remove="images\take.jpg" />
+    <None Remove="images\title.png" />
     <None Remove="images\tomita.png" />
     <None Remove="images\yuni.png" />
     <None Remove="images\ロゴ.png" />
@@ -63,6 +64,7 @@
     <Resource Include="images\take.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\title.png" />
     <Resource Include="images\tomita.png" />
     <Resource Include="images\yuni.png" />
     <Resource Include="images\ロゴ.png" />
