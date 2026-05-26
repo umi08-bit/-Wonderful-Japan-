@@ -25,15 +25,12 @@
     <None Remove="images\kiyomizu.png" />
     <None Remove="images\matu.png" />
     <None Remove="images\oosaka.png" />
-    <None Remove="images\rogo.jpg" />
     <None Remove="images\ryu.png" />
     <None Remove="images\same.png" />
     <None Remove="images\Sample.png" />
-    <None Remove="images\take.jpg" />
     <None Remove="images\title.png" />
     <None Remove="images\tomita.png" />
     <None Remove="images\yuni.png" />
-    <None Remove="images\ロゴ.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,17 +54,12 @@
     <Resource Include="images\kiyomizu.png" />
     <Resource Include="images\matu.png" />
     <Resource Include="images\oosaka.png" />
-    <Resource Include="images\rogo.jpg" />
     <Resource Include="images\ryu.png" />
     <Resource Include="images\same.png" />
     <Resource Include="images\Sample.png" />
-    <Resource Include="images\take.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="images\title.png" />
     <Resource Include="images\tomita.png" />
     <Resource Include="images\yuni.png" />
-    <Resource Include="images\ロゴ.png" />
   </ItemGroup>
 
   <ItemGroup>
