@@ -3,7 +3,45 @@
 
 ## 📖 概要 (Overview)
 「Wonderful Japan」は、日本の歴史的建築物、観光地、豊かな自然の魅力を直感的な操作で体験できるWPFデスクトップアプリケーションです。
-UI/UXの向上をテーマに、ユーザーがストレスなく情報を閲覧できるレイアウトと、日本らしい「うつろい」を感じさせるアニメーション演出にこだわって開発しました。
+UI/UXの向上をテーマに、ユーザーがストレスなく情報を閲覧できるレイアウトと、アニメーション演出にこだわって開発しました。
 
-[![Wonderful Japan Demo](https://github.com/user-attachments/assets/君の固有のURL)](https://github.com/umi08-bit/UI_application_UX.git)
-<img width="1000" height="566" alt="Image" src="https://github.com/user-attachments/assets/57751b6b-b56b-4b3e-9bae-7f72f592f8ec" />
+
+<img width="1000" height="565" alt="Image" src="https://github.com/user-attachments/assets/880cd211-116d-422b-b8b0-6684831e549f" />
+## 📖 なぜ作ったか
+「検索する前に、まず『行ってみたい』と心を動かす体験」を創出することが本作の最大のコンセプトです。
+ユーザーに大量の文字を読ませるのではなく、洗練されたカード1枚に情報を美しく完結させることで、直感的に情報をインプットできる設計を目指しました。
+
+## 🛠️ 直面した課題と解決策
+
+- **UIの不調和の解消（カスタムウィンドウの実装）**
+  標準のOSヘッダーでは、アプリ独自の色味や世界観を損なってしまうというUIデザイン上の課題がありました。そのため、標準ヘッダーをオーバーライドして完全に排除し、アプリ全体のトーン＆マナーとシームレスに調和するオリジナルヘッダーをゼロから構築しました。
+
+- **描画負荷の極限までの軽量化（UXの向上）**
+  カードUIにリッチなシャドウや角丸を用いた結果、大量配置時のスクロール処理が重くなり、快適な操作性が失われる問題に直面しました。そこで、状態変化のない静的なカード部品をキャッシュ（画像としてメモリに保持）するチューニングを施し、重厚な見た目の美しさと、カクつきのない軽快な動作を両立させました。
+
+- **デスクトップアプリのモダン化**
+  従来のデスクトップアプリ特有の「古臭さ」を払拭するため、モダンなUIデザインを採用。さらに画面遷移や画像の切り替えに滑らかなアニメーションを実装することで、現代のWebアプリやスマートフォンアプリに劣らない、時代に合わせたリッチな操作感を実現しています。
+  
+## 💻 技術スタック
+- **開発言語:** C# / XAML
+- **フレームワーク:** WPF (.NET)
+- **UIコンポーネント:** Material Design in XAML Toolkit
+- **ブラウザ連携機能:** Microsoft.Web.WebView2
+- **開発ツール:** Visual Studio 2022 / Git
+## 🚀 開発環境とセットアップ (Getting Started)
+本アプリはWPF（Windows Presentation Foundation）を用いて開発されています。
+
+### 必須環境
+- Windows 10 / 11
+- Visual Studio 2022
+- .NET 環境（WPF開発ワークロード）
+
+### 起動手順
+1. 本リポジトリをローカル環境にクローンします。
+   ```bash
+   git clone [https://github.com/umi08-bit/UI_application_UX.git](https://github.com/umi08-bit/UI_application_UX.git)
+Visual Studioで UI_application_UX.sln （または .csproj）を開きます。
+
+ソリューションをビルドし、必要なNuGetパッケージ（MaterialDesignThemes, Microsoft.Web.WebView2 など）を自動復元させます。
+
+「開始（F5）」ボタンを押してアプリケーションを起動してください。
