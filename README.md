@@ -6,9 +6,7 @@
 UI/UXの向上をテーマに、ユーザーがストレスなく情報を閲覧できるレイアウトと、アニメーション演出にこだわって開発しました。
 
 
-<img width="700" height="366" alt="Image" src="https://github.com/user-attachments/assets/57751b6b-b56b-4b3e-9bae-7f72f592f8ec" />
-
-
+<img width="1000" height="565" alt="Image" src="https://github.com/user-attachments/assets/880cd211-116d-422b-b8b0-6684831e549f" />
 ## 📖 なぜ作ったか
 「検索する前に、まず『行ってみたい』と心を動かす体験」を創出することが本作の最大のコンセプトです。
 ユーザーに大量の文字を読ませるのではなく、洗練されたカード1枚に情報を美しく完結させることで、直感的に情報をインプットできる設計を目指しました。
