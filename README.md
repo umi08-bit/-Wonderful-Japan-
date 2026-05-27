@@ -27,7 +27,7 @@ UI/UXの向上をテーマに、ユーザーがストレスなく情報を閲覧
 - **フレームワーク:** WPF (.NET)
 - **UIコンポーネント:** Material Design in XAML Toolkit
 - **ブラウザ連携機能:** Microsoft.Web.WebView2
-- **開発ツール:** Visual Studio 2022 / Git
+- **開発ツール:** Visual Studio 2026 / Git
 ## 🚀 開発環境とセットアップ (Getting Started)
 本アプリはWPF（Windows Presentation Foundation）を用いて開発されています。
 
