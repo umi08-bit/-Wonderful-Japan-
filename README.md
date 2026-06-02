@@ -37,11 +37,5 @@ UI/UXの向上をテーマに、ユーザーがストレスなく情報を閲覧
 - .NET 環境（WPF開発ワークロード）
 
 ### 起動手順
-1. 本リポジトリをローカル環境にクローンします。
-   ```bash
-   git clone [https://github.com/umi08-bit/UI_application_UX.git](https://github.com/umi08-bit/UI_application_UX.git)
-Visual Studioで UI_application_UX.sln （または .csproj）を開きます。
-
-ソリューションをビルドし、必要なNuGetパッケージ（MaterialDesignThemes, Microsoft.Web.WebView2 など）を自動復元させます。
-
-「開始（F5）」ボタンを押してアプリケーションを起動してください。
+1. リリースからZIPファイルをダウンロードして解凍してくだいさい。
+2. 中のexeファイルを起動すればアプリを使用で来ます。
